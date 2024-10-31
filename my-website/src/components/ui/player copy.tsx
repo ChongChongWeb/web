@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import MusicPlayerComponent from "@/components/ui/player";
-import styles from '@/styles/player.module.scss';
+
 
 interface Track {
     name: string;
@@ -46,13 +44,13 @@ const MusicPlayer: React.FC = () => {
     // 生成时间和进度条宽度
     const generateTime = () => {
         if (!audioRef.current.duration) return; // 防止 NaN
-        let width = (100 / audioRef.current.duration) * audioRef.current.currentTime;
+        const width = (100 / audioRef.current.duration) * audioRef.current.currentTime;
         setBarWidth(`${width}%`);
 
-        let durmin = Math.floor(audioRef.current.duration / 60);
-        let dursec = Math.floor(audioRef.current.duration % 60);
-        let curmin = Math.floor(audioRef.current.currentTime / 60);
-        let cursec = Math.floor(audioRef.current.currentTime % 60);
+        const durmin = Math.floor(audioRef.current.duration / 60);
+        const dursec = Math.floor(audioRef.current.duration % 60);
+        const curmin = Math.floor(audioRef.current.currentTime / 60);
+        const cursec = Math.floor(audioRef.current.currentTime % 60);
 
         // 格式化时间为字符串
         const formattedDurmin = durmin < 10 ? `0${durmin}` : `${durmin}`;

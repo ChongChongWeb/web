@@ -1,10 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import img1 from "../../assets/player/img/1.jpg";
-import img2 from "../../assets/player/img/2.jpg";
-import img3 from "../../assets/player/img/3.jpg";
-import mp3_1 from "../../assets/player/mp3/1.mp3";
-import mp3_2 from "../../assets/player/mp3/2.mp3";
-import mp3_3 from "../../assets/player/mp3/3.mp3";
+
 import "../../assets/player/player.css";
 
 const Player = () => {
@@ -17,7 +12,7 @@ const Player = () => {
     { name: "mihimaru GT (大和美姬丸)", artist: "マスターピース (杰作)", cover: "https://y.qq.com/music/photo_new/T002R300x300M0000042zz3N1UYGBG_2.jpg?max_age=2592000", source: "src/assets/mp3/15.ogg", url: "https://y.qq.com/n/ryqq/songDetail/001MuRIY41kzKv", favorited: true },
   ]);
 
-  const someNumber: number = Number("string_value"); // 使用 Number() 强制转换
+
 
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -44,7 +39,7 @@ const Player = () => {
   // 生成时间和进度条宽度
   const generateTime = () => {
     if (!audioRef.current.duration) return; // 防止 NaN
-    let width = (100 / audioRef.current.duration) * audioRef.current.currentTime;
+    const width = (100 / audioRef.current.duration) * audioRef.current.currentTime;
     setBarWidth(`${width}%`);
 
     let durmin = Math.floor(audioRef.current.duration / 60);

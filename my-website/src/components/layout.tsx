@@ -1,5 +1,4 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
 import { LayoutGrid } from "@/components/ui/layout-grid";
 
 export function LayoutGridDemo() {
@@ -10,21 +9,7 @@ export function LayoutGridDemo() {
   );
 }
 
-const SkeletonOne = () => {
-    return (
-      <div style={{ backgroundColor: 'black', padding: '1rem' }}> {/* 临时背景色 */}
-        <p className="font-bold md:text-4xl text-xl text-white">
-          House in the woods
-        </p>
-        <p className="font-normal text-base text-white"></p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A serene and tranquil retreat, this house in the woods offers a peaceful
-          escape from the hustle and bustle of city life.
-        </p>
-      </div>
-    );
-  };
-  
+
 
 
 

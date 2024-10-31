@@ -1,10 +1,10 @@
 import OrbitingCircles from "@/components/ui/orbiting-circles";
 
-export function OrbitingCirclesDemo(props: any) {
+export function OrbitingCirclesDemo() {
   return (
     <div className="relative flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-background">
       <div className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
-        {props.children}
+   
       </div>
 
       <OrbitingCircles
