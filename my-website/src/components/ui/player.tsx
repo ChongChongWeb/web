@@ -17,6 +17,8 @@ const Player = () => {
     { name: "mihimaru GT (大和美姬丸)", artist: "マスターピース (杰作)", cover: "https://y.qq.com/music/photo_new/T002R300x300M0000042zz3N1UYGBG_2.jpg?max_age=2592000", source: "src/assets/mp3/15.ogg", url: "https://y.qq.com/n/ryqq/songDetail/001MuRIY41kzKv", favorited: true },
   ]);
 
+  const someNumber: number = Number("string_value"); // 使用 Number() 强制转换
+
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState("00:00");
