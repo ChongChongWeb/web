@@ -1,0 +1,156 @@
+.global-wrapper {
+    background: #F6B61F; // 简化背景颜色为纯色
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .menu-enter-active,
+  .menu-leave-active {
+    transition: all 0.45s cubic-bezier(0.15, 0.6, 0.52, 1);
+  }
+  
+  .menu-enter, 
+  .menu-leave-to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
+  .floor-wrapper {
+    width: 1000px;
+    perspective: 500px;
+  
+    > .floor {
+      transform-style: preserve-3d;
+      transform: rotateX(35deg) rotateZ(-30deg) translateY(-50%);
+      width: 880px;
+      margin-left: 100px;
+    }
+  }
+  
+  .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: -80px;
+  }
+  
+  .book-item {
+    width: 200px;
+    margin-bottom: 30px;
+    transform: translateZ(2px);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    position: relative;
+  
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+  
+    &::before {
+      background-color: #F6B61F; // 边框颜色
+      height: 100%;
+      width: 10px;
+      top: 0;
+      left: 0;
+      transform-origin: left;
+      transform: rotateY(90deg);
+    }
+  
+    &::after {
+      background: #F6B61F; // 确保与背景颜色一致，去除渐变效果
+      height: 10px;
+      width: 100%;
+      top: 100%;
+      transform-origin: top;
+      transform: rotateX(-90deg);
+    }
+  
+    &:hover {
+      > .cover {
+        animation: blink .5s linear alternate infinite;
+        box-shadow: 0 0 10px yellow;
+      }
+    }
+  
+    > .cover {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter .2s;
+    }
+  
+    > .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform: translateZ(-10px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); // 保持轻微阴影，但去除白光
+    }
+  }
+  
+  .side-menu {
+    width: 440px;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #F6B61F; // 修改侧边菜单的背景颜色
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px 20px 80px 40px;
+    box-sizing: border-box;
+  
+    > .cover {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    > .volume {
+      font-family: "Raleway", sans-serif;
+      color: white;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+  
+    > .title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    > .price {
+      font-family: "Raleway", sans-serif;
+      color: white;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+  
+    > .date {
+      font-family: "Raleway", sans-serif;
+      color: white;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  
+    > .description {
+      line-height: 1.7;
+      font-size: 14px;
+    }
+  }
+  
+  .menu-overlay {
+    width: 100vw;
+    height: 100vh;
+   
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
