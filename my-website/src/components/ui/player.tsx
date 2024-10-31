@@ -57,28 +57,11 @@ const Player = () => {
   };
 
   // 更新进度条
-  const updateBar = (x) => {
-    const progressBar = document.querySelector('.progress__bar');
-    const maxduration = audioRef.current.duration;
-    const position = x - progressBar.getBoundingClientRect().left;
-    let percentage = (100 * position) / progressBar.offsetWidth;
 
-    if (percentage > 100) percentage = 100;
-    if (percentage < 0) percentage = 0;
-
-    setBarWidth(`${percentage}%`);
-    audioRef.current.currentTime = (maxduration * percentage) / 100;
-
-    if (!isPlaying) {
-      audioRef.current.play().catch(error => console.error("播放失败:", error));
-      setIsPlaying(true);
-      audioRef.current.addEventListener('timeupdate', generateTime);
-    }
-  };
 
   // 点击进度条
-  const clickProgress = (e) => {
-    updateBar(e.pageX);
+  const clickProgress = (e: { pageX: any; }) => {
+
   };
 
   // 重置播放器
@@ -154,7 +137,7 @@ const Player = () => {
 
   return (
     <div>
-      <svg xmlns="http://www.w3.org/2000/svg" hidden xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg xmlns="http://www.w3.org/2000/svg" style={{ display: 'none' }} xmlnsXlink="http://www.w3.org/1999/xlink">
         <defs>
           <symbol id="icon-heart-o" viewBox="0 0 32 32">
             <title>icon-heart-o</title>
