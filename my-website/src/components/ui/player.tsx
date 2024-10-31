@@ -60,7 +60,7 @@ const Player = () => {
 
 
   // 点击进度条
-  const clickProgress = (e: { pageX: any; }) => {
+  const clickProgress = (_: { pageX: any; }) => {
 
   };
 
