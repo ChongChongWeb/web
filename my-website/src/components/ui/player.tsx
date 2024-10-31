@@ -48,13 +48,13 @@ const Player = () => {
     let cursec = Math.floor(audioRef.current.currentTime % 60);
 
     // 格式化时间
-    if (durmin < 10) durmin = "0" + durmin;
-    if (dursec < 10) dursec = "0" + dursec;
-    if (curmin < 10) curmin = "0" + curmin;
-    if (cursec < 10) cursec = "0" + cursec;
-
-    setDuration(`${durmin}:${dursec}`);
-    setCurrentTime(`${curmin}:${cursec}`);
+    let durminStr = durmin < 10 ? "0" + durmin : durmin.toString();
+    let dursecStr = dursec < 10 ? "0" + dursec : dursec.toString();
+    let curminStr = curmin < 10 ? "0" + curmin : curmin.toString();
+    let cursecStr = cursec < 10 ? "0" + cursec : cursec.toString();
+    
+    setDuration(`${durminStr}:${dursecStr}`);
+    setCurrentTime(`${curminStr}:${cursecStr}`)
   };
 
   // 更新进度条
