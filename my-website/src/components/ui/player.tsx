@@ -41,20 +41,19 @@ const Player = () => {
     if (!audioRef.current.duration) return; // 防止 NaN
     const width = (100 / audioRef.current.duration) * audioRef.current.currentTime;
     setBarWidth(`${width}%`);
-
-    let durmin = Math.floor(audioRef.current.duration / 60);
-    let dursec = Math.floor(audioRef.current.duration % 60);
-    let curmin = Math.floor(audioRef.current.currentTime / 60);
-    let cursec = Math.floor(audioRef.current.currentTime % 60);
-
-    // 格式化时间
-    let durminStr = durmin < 10 ? "0" + durmin : durmin.toString();
-    let dursecStr = dursec < 10 ? "0" + dursec : dursec.toString();
-    let curminStr = curmin < 10 ? "0" + curmin : curmin.toString();
-    let cursecStr = cursec < 10 ? "0" + cursec : cursec.toString();
+    const durmin = Math.floor(audioRef.current.duration / 60);
+    const dursec = Math.floor(audioRef.current.duration % 60);
+    const curmin = Math.floor(audioRef.current.currentTime / 60);
+    const cursec = Math.floor(audioRef.current.currentTime % 60);
+    
+    // Format time strings
+    const durminStr = durmin < 10 ? "0" + durmin : durmin.toString();
+    const dursecStr = dursec < 10 ? "0" + dursec : dursec.toString();
+    const curminStr = curmin < 10 ? "0" + curmin : curmin.toString();
+    const cursecStr = cursec < 10 ? "0" + cursec : cursec.toString();
     
     setDuration(`${durminStr}:${dursecStr}`);
-    setCurrentTime(`${curminStr}:${cursecStr}`)
+    setCurrentTime(`${curminStr}:${cursecStr}`);
   };
 
   // 更新进度条
