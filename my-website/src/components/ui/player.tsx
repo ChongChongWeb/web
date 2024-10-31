@@ -60,8 +60,8 @@ const Player = () => {
 
 
   // 点击进度条
-  const clickProgress = (_: { pageX: any; }) => {
-
+  const clickProgress = () => {
+    // Logic without needing e
   };
 
   // 重置播放器
